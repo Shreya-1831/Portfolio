@@ -45,8 +45,9 @@ export const Navbar = () => {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = './public/shreya_resume.pdf';
-    link.download = 'shreya_resume.pdf';
+    link.href = '/shreya_resume.pdf'; 
+    link.download = 'shreya_resume.pdf'; 
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
