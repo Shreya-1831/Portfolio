@@ -107,7 +107,7 @@ export const Certifications = () => {
       venue: 'HICET International Conference',
       date: 'February 2026',
       description: 'Presented a research paper on an AI-based intrusion detection system for multiplayer cheat detection, achieving 93% accuracy with 1.5–2s latency using hybrid machine learning models.',
-      link: '',
+      link: 'https://drive.google.com/file/d/1nIDuED9-Cv5GlBT6T3OOEZXgHTu7yW3g/view?usp=sharing',
     },
     {
       title: 'Optimising Marketing Strategies: Predicting Customer Personality Using Advanced Machine Learning Models',
