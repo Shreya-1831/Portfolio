@@ -22,6 +22,8 @@ app.add_middleware(
 
 EMAIL = os.getenv("EMAIL")
 PASSWORD = os.getenv("PASSWORD")
+print("EMAIL:", EMAIL)
+print("PASSWORD EXISTS:", PASSWORD is not None)
 
 
 class ContactForm(BaseModel):
@@ -41,19 +43,19 @@ async def send_email(data: ContactForm):
         msg["Subject"] = f"Portfolio Contact from {data.name}"
 
         body = f"""
-Name: {data.name}
+            Name: {data.name}
 
-Email: {data.email}
+            Email: {data.email}
 
-Message:
-{data.message}
-"""
+            Message:
+            {data.message}
+        """
 
         msg.attach(MIMEText(body, "plain"))
 
-        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
 
-        server.starttls()
+        # server.starttls()
 
         server.login(EMAIL, PASSWORD)
 
