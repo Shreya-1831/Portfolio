@@ -1,17 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-import os
 from dotenv import load_dotenv
+import resend
+import os
 
 load_dotenv()
 
 app = FastAPI()
 
-# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -20,10 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-EMAIL = os.getenv("EMAIL")
-PASSWORD = os.getenv("PASSWORD")
-print("EMAIL:", EMAIL)
-print("PASSWORD EXISTS:", PASSWORD is not None)
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 
 class ContactForm(BaseModel):
@@ -36,43 +30,36 @@ class ContactForm(BaseModel):
 async def send_email(data: ContactForm):
 
     try:
-        msg = MIMEMultipart()
 
-        msg["From"] = EMAIL
-        msg["To"] = EMAIL
-        msg["Subject"] = f"Portfolio Contact from {data.name}"
+        params = {
+            "from": "onboarding@resend.dev",
 
-        body = f"""
-            Name: {data.name}
+            "to": ["shreyasonpavane.18@gmail.com"],
 
-            Email: {data.email}
+            "subject": f"Portfolio Contact from {data.name}",
 
-            Message:
-            {data.message}
-        """
+            "html": f"""
+                <h2>New Portfolio Message</h2>
 
-        msg.attach(MIMEText(body, "plain"))
+                <p><strong>Name:</strong> {data.name}</p>
 
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+                <p><strong>Email:</strong> {data.email}</p>
 
-        # server.starttls()
+                <p><strong>Message:</strong></p>
 
-        server.login(EMAIL, PASSWORD)
+                <p>{data.message}</p>
+            """
+        }
 
-        server.sendmail(
-            EMAIL,
-            EMAIL,
-            msg.as_string()
-        )
-
-        server.quit()
+        email = resend.Emails.send(params)
 
         return {
             "success": True,
-            "message": "Email sent successfully"
+            "data": email
         }
 
     except Exception as e:
+
         return {
             "success": False,
             "error": str(e)
