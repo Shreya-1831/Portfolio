@@ -356,7 +356,7 @@ export const Hero = () => {
                 </div>
 
                 {/* Badge */}
-                <div className="absolute -bottom-3 -right-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl px-3 py-2 shadow-lg shadow-blue-500/30 animate-float-slow">
+                {/* <div className="absolute -bottom-3 -right-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl px-3 py-2 shadow-lg shadow-blue-500/30 animate-float-slow">
                   <div className="text-white text-xs font-bold">
                     ML Engineer
                   </div>
@@ -364,7 +364,7 @@ export const Hero = () => {
                   <div className="text-blue-200 text-xs">
                     CGPA 8.94
                   </div>
-                </div>
+                </div> */}
 
               </div>
             </div>
