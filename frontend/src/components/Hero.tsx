@@ -373,11 +373,38 @@ export const Hero = () => {
         </div>
 
         {/* STATS ROW */}
-        <div className="mt-16 pt-10 border-t border-slate-700/80 relative z-20 grid grid-cols-3 gap-6 md:gap-10 animate-fade-in-delay-3">
-          <StatCounter end={4} suffix="+" label="Projects Built" />
-          <StatCounter end={8} suffix=".94" label="CGPA Score" />
-          {/* <StatCounter end={4} suffix="+" label="Certifications" /> */}
-          <StatCounter end={5} suffix="+" label="Hackathons" />
+        <div className="mt-16 pt-8 border-t border-slate-700/80 relative z-20 grid grid-cols-3 gap-6 md:gap-10 animate-fade-in-delay-3">
+
+          <div className="text-center">
+            <h3 className="text-3xl md:text-5xl font-bold text-blue-400 leading-none">
+              4+
+            </h3>
+
+            <p className="mt-2 text-gray-400 text-sm md:text-base font-normal">
+              Projects Built
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl md:text-5xl font-bold text-blue-400 leading-none">
+              8.94
+            </h3>
+
+            <p className="mt-2 text-gray-400 text-sm md:text-base font-normal">
+              CGPA Score
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl md:text-5xl font-bold text-blue-400 leading-none">
+              5+
+            </h3>
+
+            <p className="mt-2 text-gray-400 text-sm md:text-base font-normal">
+              Hackathons
+            </p>
+          </div>
+
         </div>
 
       </div>
