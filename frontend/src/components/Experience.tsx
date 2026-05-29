@@ -38,14 +38,20 @@ export const Experience = () => {
     },
     {
       title: 'Software Intern',
-      organization: 'Intelligzn Lifecycle Services Ptd. Ltd.',
-      period: 'June 2025 - July 2025',
+      organization: 'Intelizign Lifecycle Services Pvt. Ltd.',
+      period: 'Jun 2025 - Jul 2025',
       location: 'Chennai, India',
-      description: 'Built predictive models for Stock Price Prediction.',
+      description:
+        'Developed a machine learning-based stock price prediction model using Python, applying data preprocessing and feature engineering techniques in a real-world development environment.',
+
       achievements: [
-        'Improved prediction accuracy by 25% through feature engineering',
-        'Deployed models on AWS cloud platform with auto-scaling',
+        'Built and trained machine learning models for stock price forecasting using Python',
+        'Applied data preprocessing, feature engineering, and model evaluation techniques',
+        'Worked in a real-world software development environment following industry practices',
       ],
+
+      certificateLink: 'https://drive.google.com/file/d/1uyuC3C_Ttkx_Bv3YHbV2szLeIiOUeHcL/view?usp=sharing',
+
       color: 'from-purple-500 to-pink-600',
       dotColor: '#8b5cf6',
     },
@@ -139,6 +145,18 @@ export const Experience = () => {
                             {ach}
                           </li>
                         ))}
+                        {exp.certificateLink && (
+                          <div className="mt-5">
+                            <a
+                              href={exp.certificateLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r ${exp.color} text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+                            >
+                              View Certificate
+                            </a>
+                          </div>
+                        )}
                       </ul>
                     </div>
                   </div>
