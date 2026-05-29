@@ -59,9 +59,7 @@ export const About = () => {
           <div className="h-1 w-20 mx-auto mb-6 rounded-full"
             style={{ background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)' }} />
           <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            I am a Machine Learning Engineer with a strong foundation in machine learning and deep learning,
-            focused on building scalable, real-world AI solutions. I enjoy transforming complex data into
-            intelligent systems through thoughtful model design, experimentation, and continuous learning.
+            I am an aspiring Machine Learning Engineer with a strong foundation in machine learning and deep learning, passionate about building scalable, real-world AI solutions. I enjoy transforming complex data into intelligent systems through thoughtful model design, experimentation, and continuous learning.
           </p>
         </div>
 
